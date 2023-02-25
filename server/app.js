@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require('path');
 
+const PORT = process.env.PORT || 4000;
 const app = express();
 require("dotenv/config")
 
@@ -51,4 +52,4 @@ app.get('*' , function(req,res){
     res.sendFile(path.join(__dirname,'../client/build/index.html'));
 })
 
-app.listen(4000 , ()=> console.log("Listening to the port number 4000"));
+app.listen(PORT , ()=> console.log("Listening to the port number 4000"));
